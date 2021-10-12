@@ -21,7 +21,7 @@
 
 <div class="row justify-content-center mt-5">
     <div class="col-md-8">
-        <form action="{{route('recetas.store')}}" method="POST" novalidate>
+        <form action="{{route('recetas.store')}}" enctype="multipart/form-data" method="POST" novalidate>
 
             @csrf
 

@@ -49,6 +49,8 @@ class RecetaController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request['imagen']->store('upload-recetas','public'));
+
         //recibe todo todo lo que viene en el formulario
         $data = request()->validate([
             'titulo' => 'required|min:6',
