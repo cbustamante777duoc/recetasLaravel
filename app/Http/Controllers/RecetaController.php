@@ -53,7 +53,8 @@ class RecetaController extends Controller
             'titulo' => 'required|min:6',
             'categoria' => 'required',
             'ingredientes' => 'required',
-            'preparacion' => 'required'
+            'preparacion' => 'required',
+            // 'imagen' => 'required|image|size:1000'
         ]);
 
         DB::table('recetas')->insert([
