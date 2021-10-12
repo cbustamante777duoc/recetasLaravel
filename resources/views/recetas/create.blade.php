@@ -44,11 +44,21 @@
                     class="form-control"
                 >
 
+                <option value="">--Selecciones--</option>
                 @foreach ($categorias as $id => $categoria )
 
-                    <option value="{{$id}}">{{$categoria}} </option>
+                    <option value="{{$id}}"
+                        {{old('categoria')== $id ? 'Selected': ''}}>
+                        {{$categoria}}
+                     </option>
                 @endforeach
                 </select>
+
+                @error('categoria')
+                    <span class="invalid-feedback d-block" role="alert">
+                        <strong>{{$message}}</strong>
+                    </span>
+                @enderror
             </div>
 
             <div class="form-group">
