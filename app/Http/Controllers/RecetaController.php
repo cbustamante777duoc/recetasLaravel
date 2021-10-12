@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Receta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RecetaController extends Controller
 {
@@ -35,7 +36,19 @@ class RecetaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //recibe todo todo lo que viene en el formulario
+        $data = request()->validate([
+            'titulo' => 'required|min:6'
+        ]);
+
+        DB::table('recetas')->insert([
+            'titulo' => $data['titulo']
+        ]);
+
+       // dd($request->all());
+
+        return redirect()->action('RecetaController@index');
+
     }
 
     /**
