@@ -51,7 +51,9 @@ class RecetaController extends Controller
         //recibe todo todo lo que viene en el formulario
         $data = request()->validate([
             'titulo' => 'required|min:6',
-            'categoria' => 'required'
+            'categoria' => 'required',
+            'ingredientes' => 'required',
+            'preparacion' => 'required'
         ]);
 
         DB::table('recetas')->insert([
