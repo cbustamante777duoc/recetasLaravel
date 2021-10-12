@@ -22,7 +22,10 @@ Route::get('/', function () {
 // });
 
 // Route::get('/nosotros','RecetaController');
-Route::get('/recetas','RecetaController');
+// Route::get('/recetas','RecetaController');
+
+Route::get('/recetas','RecetaController@index')->name('recetas.index');
+Route::get('/recetas/create','RecetaController@create')->name('recetas.create');
 
 Auth::routes();
 

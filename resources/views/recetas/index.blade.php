@@ -1,18 +1,34 @@
 @extends('layouts.app')
 
+@section('botones')
+
+    <a href="{{route('recetas.create')}}" class="btn btn-primary mr-2 text-white">Crear Receta</a>
+@endsection
 
 @section('content')
 
-    <h1>Pagina de recetas</h1>
+<h2 class="text-center mb-5">Administra tus recetas</h2>
 
-    @foreach ($recetas as $receta )
-        <li>{{$receta}}</li>
-    @endforeach
-    <hr>
+<div class="col-md-10 max-auto bg-white p-3" >
+    <table class="table">
+        <thead class="bg-primary text-light">
+            <tr>
+                <th scope="col">Titulo</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
 
-    <h2>Categorias</h2>
-    @foreach ($categorias as $categoria )
-        <li>{{$categoria}}</li>
-    @endforeach
+        <tbody>
+            <tr>
+                <td>Pizza</td>
+                <td>Pizzas</td>
+                <td>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 @endsection
