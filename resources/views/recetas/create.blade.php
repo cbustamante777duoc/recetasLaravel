@@ -52,11 +52,11 @@
                 >
 
                 <option value="">--Selecciones--</option>
-                @foreach ($categorias as $id => $categoria )
+                @foreach ($categorias as $categoria )
 
-                    <option value="{{$id}}"
-                        {{old('categoria')== $id ? 'Selected': ''}}>
-                        {{$categoria}}
+                    <option value="{{$categoria->id}}"
+                        {{old('categoria')== $categoria->id ? 'Selected': ''}}>
+                        {{$categoria->nombre}}
                      </option>
                 @endforeach
                 </select>
