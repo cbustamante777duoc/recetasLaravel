@@ -46,6 +46,7 @@ class RecetaController extends Controller
         //forma antigua sin modelo
        // $categorias = DB::table('categoria_recetas')->get()->pluck('nombre','id');
 
+       //consulta desde un modelo
        $categorias = CategoriaReceta::all(['id','nombre']);
 
         return view('recetas.create')->with('categorias',$categorias);
