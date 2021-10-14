@@ -85,17 +85,25 @@ class RecetaController extends Controller
 
 
         //almacenar en la base de datos
-        DB::table('recetas')->insert([
+        // DB::table('recetas')->insert([
+        //     'titulo' => $data['titulo'],
+        //     'preparacion' => $data['preparacion'],
+        //     'ingredientes' => $data['ingredientes'],
+        //     'ingredientes' => $data['ingredientes'],
+        //     'user_id' => Auth::user()->id,
+        //     'imagen' => $ruta_imagen,
+        //     'categoria_id' => $data['categoria'],
+        // ]);
+
+
+        Auth()->user()->recetas()->create([
+
             'titulo' => $data['titulo'],
+            'ingredientes' => $data['ingredientes'],
             'preparacion' => $data['preparacion'],
-            'ingredientes' => $data['ingredientes'],
-            'ingredientes' => $data['ingredientes'],
-            'user_id' => Auth::user()->id,
             'imagen' => $ruta_imagen,
             'categoria_id' => $data['categoria'],
         ]);
-
-
 
        // dd($request->all());
 
