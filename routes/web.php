@@ -26,6 +26,10 @@ Route::get('/', function () {
 
 Route::get('/recetas','RecetaController@index')->name('recetas.index');
 Route::get('/recetas/create','RecetaController@create')->name('recetas.create');
+
+//la varible tiene que se igual al modelo
+Route::get('/recetas/{receta}','RecetaController@show')->name('recetas.show');
+
 Route::post('/recetas','RecetaController@store')->name('recetas.store');
 
 Auth::routes();
